@@ -4,7 +4,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain_community.llms.huggingface_endpoint import HuggingFaceEndpoint
 
 # Retrieve the Hugging Face API token from environment variables
-huggingfacehub_api_token = "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"
+huggingfacehub_api_token = "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"
 
 # Initialize the conversation buffer memory
 memory = ConversationBufferMemory(return_messages=True)
