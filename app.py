@@ -1,4 +1,7 @@
-pip install streamlit langchain langcgain_community
+!pip install 
+!pip streamlit 
+!pip langchain 
+!pip langcgain_community
 import os
 import streamlit as st
 from langchain.memory import ConversationBufferMemory
