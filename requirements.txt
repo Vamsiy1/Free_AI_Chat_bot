@@ -1,7 +1,8 @@
-streamlit
-python-dotenv
-langchain
-langchain_community
-pydantic
-requests
+streamlit==1.24.0
+python-dotenv==0.21.0
+langchain==0.2.1
+langchain_community==0.2.1
+pydantic==1.10.12
+requests==2.32.2
+
 
