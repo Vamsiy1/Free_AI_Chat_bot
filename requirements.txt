@@ -1,4 +1,5 @@
 streamlit
+dotenv
 langchain
 langchain_community
 pydantic
