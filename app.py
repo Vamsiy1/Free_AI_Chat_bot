@@ -9,8 +9,9 @@ load_dotenv()
 memory = ConversationBufferMemory(return_messages=True)
 
 # Retrieve the API token
-huggingfacehub_api_token = os.getenv('HUGGINGFACE_API_TOKEN')
-                                      
+#huggingfacehub_api_token = os.getenv('HUGGINGFACE_API_TOKEN')
+os.environ['HUGGINGFACE_API_TOKEN'] = st.secrets['HUGGINGFACE_API_TOKEN']
+huggingfacehub_api_token = os.environ['HUGGINGFACE_API_TOKEN']                                     
 print('VALUE OF TOKEN -->',huggingfacehub_api_token)
 
 
