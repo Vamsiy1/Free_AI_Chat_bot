@@ -72,8 +72,8 @@ def main():
         """, unsafe_allow_html=True)
 
     # Title and description
-    st.markdown('<p class="title">Conversational AI with AI-cademy 🤖</p>', unsafe_allow_html=True)
-    st.markdown('<p class="subtitle">Welcome to the Conversational AI interface.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="title">Interactive Chatbot 🤖</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subtitle">Step into an AI chatbot experience tailored by Vamsi.</p>', unsafe_allow_html=True)
 
     # Input box for user prompt
     prompt = st.text_input("Enter your prompt here:", key='prompt', placeholder="Type something...", help="Ask anything you want!")
