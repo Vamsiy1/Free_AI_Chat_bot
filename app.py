@@ -3,7 +3,9 @@ from langchain.memory import ConversationBufferMemory
 from langchain_community.llms.huggingface_endpoint import HuggingFaceEndpoint
 import os
 from dotenv import load_dotenv
+import time
 load_dotenv()
+
 
 # Initialize the conversation buffer memory
 memory = ConversationBufferMemory(return_messages=True)
@@ -46,19 +48,54 @@ def converse(prompt):
 
 # Streamlit app
 def main():
-    st.title("Conversational AI with AI-cademy")
-    st.markdown("Welcome to the Conversational AI interface.")
+    # Custom CSS for styling
+    st.markdown("""
+        <style>
+        .title {
+            font-size: 50px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #FF5722;
+        }
+        .prompt-box {
+            font-size: 18px;
+            color: #3F51B5;
+        }
+        .response-box {
+            font-size: 18px;
+            color: #E91E63;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
+    # Title and description
+    st.markdown('<p class="title">Conversational AI with AI-cademy 🤖</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subtitle">Welcome to the Conversational AI interface.</p>', unsafe_allow_html=True)
 
     # Input box for user prompt
-    prompt = st.text_input("Enter your prompt here:")
+    prompt = st.text_input("Enter your prompt here:", key='prompt', placeholder="Type something...", help="Ask anything you want!")
 
     if st.button("Ask"):
         if prompt:
             with st.spinner("Thinking..."):
                 response = converse(prompt)
-            st.text_area("Response:", value=response, height=150)
+            display_response(response)
         else:
             st.warning("Please enter a prompt.")
+
+
+
+# Function to display response letter by letter
+def display_response(response):
+    response_placeholder = st.empty()
+    typed_text = ""
+    for char in response:
+        typed_text += char
+        response_placeholder.markdown(f'<p class="response-box">{typed_text}</p>', unsafe_allow_html=True)
+        time.sleep(0.01)  # Adjust the delay to control typing speed
 
 if __name__ == "__main__":
     main()
