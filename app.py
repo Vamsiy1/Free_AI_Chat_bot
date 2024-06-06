@@ -44,7 +44,7 @@ def converse(prompt):
     # Store the new prompt and response in memory
     memory.save_context({"prompt": prompt}, {"response": response})
 
-    return response
+    return f"Maya: {response}"
 
 # Streamlit app
 def main():
