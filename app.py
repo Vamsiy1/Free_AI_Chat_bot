@@ -19,7 +19,7 @@ print('VALUE OF TOKEN -->',huggingfacehub_api_token)
 
 # Initialize the HuggingFaceEndpoint with the conversation buffer memory
 llm = HuggingFaceEndpoint(
-    repo_id="mistralai/Mistral-7B-Instruct-v0.3",
+    repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
     max_new_tokens=512,
     top_k=10,
     top_p=0.95,
