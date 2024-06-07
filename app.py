@@ -19,7 +19,7 @@ print('VALUE OF TOKEN -->',huggingfacehub_api_token)
 
 # Initialize the HuggingFaceEndpoint with the conversation buffer memory
 llm = HuggingFaceEndpoint(
-    repo_id="microsoft/Phi-3-mini-128k-instruct",
+    repo_id="google/gemma-1.1-7b-it",
     max_new_tokens=1024,
     top_k=10,
     top_p=0.95,
